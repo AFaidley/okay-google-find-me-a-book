@@ -6,6 +6,7 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
+        // Finding user, excluding version and password
         const userInfo = await User.findOne({ _id: context.user._id }).select(
           '-__v -password'
         );
@@ -19,16 +20,20 @@ const resolvers = {
   Mutation: {
     addUser: async (parent, args) => {
       try {
+        // Create user and assign token
         const user = await User.create(args);
         const token = signToken(user);
+        // Return auth obj with user and token info- signed in
         return { token, user };
       } catch (error) {
         console.log(error);
       }
     },
     login: async (parent, { email, password }) => {
+      // Logging user in
       const userLogin = await User.findOne({ email });
 
+      // If incorrect- auth error
       if (!userLogin) {
         throw new AuthenticationError('Incorrect email or password');
       }
@@ -39,11 +44,13 @@ const resolvers = {
         throw new AuthenticationError('Incorrect email or password');
       }
 
+      // If email and password are correct, sign user in with JWT(token)
       const token = signToken(userLogin);
       return { token, userLogin };
     },
     saveBook: async (parent, args, context) => {
       if (context.user) {
+        // Saving book to logged in user
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
           { $addToSet: { savedBooks: args.input } },
@@ -59,6 +66,7 @@ const resolvers = {
     },
     removeBook: async (parent, args, context) => {
       if (context.user) {
+        // Removing book from the logged in user
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
           { $pull: { savedBooks: { bookId: args.bookId } } },
