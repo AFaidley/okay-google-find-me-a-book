@@ -31,14 +31,14 @@ const SavedBooks = () => {
       });
 
       removeBookId(bookId);
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      console.error(error);
     }
   };
 
   // Data is loading
   if (loading) {
-    return <h2>Thank you for your paitence, data is loading.</h2>;
+    return <h2>Thank you for your patience, data is loading.</h2>;
   }
 
   return (

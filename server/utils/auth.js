@@ -12,6 +12,7 @@ module.exports = {
 
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },
+  // Removed res due to error
   authMiddleware: function ({req}) {
     // allows token to be sent via  req.query or headers
     let token = req.query.token || req.headers.authorization;
