@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 // Followed readme for layout
 
-// Ask TA or tutor about this particular mutation
+// Ask TA or tutor about this particular mutation- login vs loginuser
 export const LOGIN_USER = gql`
   mutation loginUser($email: String!, $password: String!) {
     login(email: $email, password: $password) {
