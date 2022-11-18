@@ -17,7 +17,7 @@ Below is a link to my deployed application:
 https://okay-google-search-for-a-book.herokuapp.com/
 <br>
 <br>
-![Book search home](../Develop/client/src/img/Screenshot%202022-11-17%20170209.jpg)
+![Book search home](/client/src/img/Screenshot%202022-11-17%20170209.jpg)
 <br>
 <br>
 ![Your books](/client/src/img/Screenshot%202022-11-17%20170624.jpg)
