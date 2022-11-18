@@ -10,11 +10,18 @@
 * [Testing](#testing)
 * [Questions](#questions)
 ## Description
-This app will allow the user to search for books as well as sign-up/login and save the books they desire to a 'My Books' section- they will also be able to delete said books.
+This app will allow the user to search for books as well as sign-up/login and save the books they desire to a 'See your books' section- they will also be able to delete said books.
 <br>
 Below is a link to my deployed application:
 <br>
 https://okay-google-search-for-a-book.herokuapp.com/
+<br>
+<br>
+![Book search home](../Develop/client/src/img/Screenshot%202022-11-17%20170209.jpg)
+<br>
+<br>
+![Your books](../Develop/client/src/img/Screenshot%202022-11-17%20170624.jpg)
+
 
 ## Technology Used
 - Javascript
